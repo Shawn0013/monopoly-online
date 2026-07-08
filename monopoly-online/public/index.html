@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大富翁 Online</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div id="loginScreen" class="screen">
+        <h1>🎩 大富翁 Online</h1>
+        <div class="login-box">
+            <input type="text" id="nameInput" placeholder="输入你的名字" maxlength="8">
+            <button id="joinBtn">加入游戏</button>
+            <button id="startBtn" disabled>开始游戏 (等待玩家...)</button>
+        </div>
+        <div id="playerList"></div>
+        <div id="loginMessages"></div>
+    </div>
+
+    <div id="gameScreen" class="screen" style="display: none;">
+        <div class="game-header">
+            <h2>🎩 大富翁</h2>
+            <div id="turnIndicator"></div>
+        </div>
+        <div id="gameContainer">
+            <div id="board">
+                <div class="board-center">🎲<br>大富翁</div>
+            </div>
+            <div id="sidePanel">
+                <div id="playersInfo"></div>
+                <div id="gameLog"></div>
+                <div id="actions">
+                    <button id="rollBtn">🎲 掷骰子</button>
+                    <button id="buyBtn" style="display:none;">🏠 购买地产</button>
+                    <button id="buildBtn" style="display:none;">🔨 建造房屋</button>
+                    <button id="endTurnBtn" style="display:none;">➡️ 结束回合</button>
+                </div>
+            </div>
+        </div>
+        <div id="diceResult"></div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

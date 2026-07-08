@@ -1,0 +1,52 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #c8e6c9; }
+
+.screen { text-align: center; padding-top: 40px; }
+.login-box { margin: 20px auto; max-width: 400px; }
+input, button {
+    padding: 12px 20px; margin: 5px; font-size: 16px;
+    border-radius: 8px; border: 2px solid #4caf50; background: white; cursor: pointer;
+}
+button { background: #4caf50; color: white; font-weight: bold; }
+button:disabled { background: #a5d6a7; cursor: not-allowed; }
+#playerList { margin: 20px auto; max-width: 400px; text-align: left; }
+#loginMessages, #gameLog { max-width: 500px; margin: 20px auto; text-align: left; }
+
+#gameContainer { display: flex; max-width: 1200px; margin: 20px auto; gap: 20px; }
+#board {
+    flex: 2; display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    background: #e8f5e9; border: 3px solid #2e7d32; border-radius: 10px;
+    min-height: 600px;
+}
+#sidePanel { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+#playersInfo { background: white; padding: 15px; border-radius: 10px; }
+#actions button { display: block; width: 100%; margin: 5px 0; }
+#diceResult { font-size: 40px; margin: 10px; }
+
+.board-cell {
+    border: 1px solid #a5d6a7; font-size: 10px; text-align: center;
+    display: flex; flex-direction: column; justify-content: center;
+    background: white; cursor: pointer; padding: 3px;
+}
+.board-cell.property-brown { background: #8d6e63; color: white; }
+.board-cell.property-lightblue { background: #81d4fa; }
+.board-cell.property-pink { background: #f48fb1; color: white; }
+.board-cell.property-orange { background: #ffb74d; }
+.board-cell.property-red { background: #ef5350; color: white; }
+.board-cell.property-yellow { background: #fff176; }
+.board-cell.property-green { background: #66bb6a; color: white; }
+.board-cell.property-darkblue { background: #1e88e5; color: white; }
+.board-cell.railroad { background: #d7ccc8; }
+.board-cell.utility { background: #b0bec5; }
+.board-cell.chance { background: #ffcc80; }
+.board-cell.community { background: #80cbc4; }
+.board-cell.tax { background: #ef9a9a; }
+.board-cell.jail, .board-cell.gotojail { background: #ffab91; }
+.board-cell.start, .board-cell.free { background: #c5e1a5; }
+
+.player-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    display: inline-block; margin: 1px; border: 1px solid black;
+}
